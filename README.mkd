@@ -1,0 +1,47 @@
+## Overview
+
+This repository provides implementation for three case studies in our paper.
+
+- MNIST digit handwritten dataset
+- Free Spoken Digit Dataset ([FSD](https://github.com/Jakobovski/free-spoken-digit-dataset))
+- American Sign Language ([ASL](https://www.kaggle.com/grassknoted/asl-alphabet))
+
+
+The demonstration of ObfNet is available [here](https://github.com/ntu-aiot/ObfNet-showcase).
+
+## Getting Started
+
+```bash
+python mnist/main.py -T # first train inference network
+python fsd/main.py  
+python asl/main.py 
+```
+
+Note: For ASL dataset, it can be downloaded from [here](https://www.kaggle.com/grassknoted/asl-alphabet/data).
+
+
+## Citation
+
+If you use this code for your research, please cite our papers:
+
+```
+@article{xu2019lightweight,
+  title={Lightweight and Unobtrusive Privacy Preservation for Remote Inference via Edge Data Obfuscation},
+  author={Xu, Dixing and Zheng, Mengyao and Jiang, Linshan and Gu, Chaojie and Tan, Rui and Cheng, Peng},
+  journal={arXiv preprint arXiv:1912.09859},
+  year={2019}
+}
+
+@inproceedings{zheng2019challenges,
+  title={Challenges of Privacy-Preserving Machine Learning in IoT},
+  author={Zheng, Mengyao and Xu, Dixing and Jiang, Linshan and Gu, Chaojie and Tan, Rui and Cheng, Peng},
+  booktitle={Proceedings of the First International Workshop on Challenges in Artificial Intelligence and Machine Learning for Internet of Things},
+  pages={1--7},
+  year={2019}
+}
+```
+
+## Acknowledgements
+
+- Code for MNIST & ASL is inspired by [keras-mnist](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py).
+- Code for FSD is inspired by [sound-mnist](https://github.com/adhishthite/sound-mnist).
