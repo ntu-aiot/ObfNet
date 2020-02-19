@@ -205,8 +205,9 @@ def get_obfmodel_cnn(target_dims, num_neuron):
 @click.option('--is-gray',
               default=False,
               help='flag for converting to greyscale images.')
+@click.option('--dataset-path', '-D', default='dataset/asl/', help='path to dataset')
 def main(is_inf, is_inf_cnn, is_obf_cnn, num_neuron, inf_path, save_image,
-         is_gray):
+         is_gray, dataset_path):
 
     os.makedirs("models/asl/", exist_ok=True)
 
@@ -221,9 +222,12 @@ def main(is_inf, is_inf_cnn, is_obf_cnn, num_neuron, inf_path, save_image,
     log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     tensorboard_cb = TensorBoard(log_dir=log_dir, histogram_freq=1)
 
+    if not dataset_path:
     # use pickled dataset to save time
-    with open("train.pkl", "rb") as f:
-        X_train, y_train = pkl.load(f)
+        with open("dataset/asl/train.pkl", "rb") as f:
+            X_train, y_train = pkl.load(f)
+    else:
+        get_data(dataset_path)
 
     if is_gray:
         X_train = grayscale(X_train)

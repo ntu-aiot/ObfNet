@@ -12,12 +12,15 @@ The demonstration of ObfNet is available [here](https://github.com/ntu-aiot/ObfN
 ## Getting Started
 
 ```bash
-python mnist/main.py -T # first train inference network
+pip install -r requirements.txt # install dependencies
+python mnist/main.py -T -IC -OM # first train cnn-based inference network and then mlp-based obfuscation network
 python fsd/main.py  
 python asl/main.py 
 ```
 
-Note: For ASL dataset, it can be downloaded from [here](https://www.kaggle.com/grassknoted/asl-alphabet/data).
+Note: 
+* FSD is located at [releases](https://github.com/ntu-aiot/ObfNet/releases). Download and unzip to current folder.
+* For ASL dataset, it can be downloaded from [here](https://www.kaggle.com/grassknoted/asl-alphabet/data).
 
 
 ## Citation

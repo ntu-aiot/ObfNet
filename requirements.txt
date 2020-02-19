@@ -4,3 +4,4 @@ click
 numpy
 scikit-learn
 Pillow
+librosa
